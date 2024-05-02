@@ -1,0 +1,22 @@
+<div class="container">
+  <h1 class="text-center mb-4">Todos os usuarios</h1>
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Função</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users$ | async">
+          <td>{{user.nome}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.funcao}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <button (click)="novoUser()" class="btn btn-success" >New</button>
+  </div>
+</div>

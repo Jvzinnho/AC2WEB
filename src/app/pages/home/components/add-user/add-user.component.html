@@ -1,0 +1,46 @@
+<div class="container-fluid">
+    <div class="row align-items-center text-center full-height">
+      <div class="col-md-6 offset-md-3">
+        <form
+            [formGroup]="userForm"
+            (ngSubmit)="onSubmit()"
+            class="p-5 border rounded shadow bg-white">
+        
+            <div class="form-group">
+                <div class="nome">
+                    <input type="text" placeholder="Nome:" id="nome" formControlName="nome" class="form-control" required>
+    
+                </div>
+            </div>
+        
+            <div class="form-group">
+                <div class="email">
+                    <input type="text" placeholder="E-mail:" id="email" formControlName="email" class="form-control" required>
+                </div>
+            </div>
+        
+
+            <div class="form-group">
+                <div class="funcao">
+                    <select formControlName="funcao" class="form-control" required>
+                        <option value="" selected>Selecione uma funcao..</option>
+                        <option value="Engenheiro de FE" id="opcao1">Engenheiro de FE </option>
+                        <option value="Engenheiro de BE" id="opcao2">Engenheiro de BE</option>
+                        <option value="Analista de dados" id="opcao3">Analista de dados</option>
+                        <option value="Líder Técnico" id="opcao4">Líder Técnico</option>
+                    </select>
+                </div>
+                
+            </div>
+            <div class="form-group">
+                <div class="senha">
+                    <input type="password" id="senha" placeholder="Senha:" formControlName="senha" class="form-control" required minlength="6" maxlength="15">
+                </div>
+            </div>
+        
+            <button type="submit" [disabled]="!userForm.valid" class="btn btn-primary m-3"> Salvar </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
