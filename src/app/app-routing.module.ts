@@ -19,7 +19,7 @@ const routes: Routes = [
       {path: "", component: WelcomeComponent},
       {path: "users", component: UsersComponent}, 
       {path: "add-user", component: AddUserComponent},
-      {path: "edit-user", component: EditUserComponent},
+      {path: "edit-user/:id", component: EditUserComponent},
       {path: "todo-list", component: TodoListComponent}
      
     ],

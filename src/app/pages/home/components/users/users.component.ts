@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../../../../user.service';
+ 
 
 @Component({
   selector: 'app-users',
@@ -15,4 +16,14 @@ export class UsersComponent {
   novoUser(){
     this.router.navigate(['/app/add-user']);
   }
+
+  editarUser(user: any){
+    this.router.navigate(['/app/edit-user', user.id]);
+    // console.log(print(user))
+  }
+  
+  removerUser(user: any){
+    this.userService.removerUser(user.id);
+  }
+  
 }

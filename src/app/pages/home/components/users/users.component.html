@@ -7,6 +7,7 @@
           <th>Nome</th>
           <th>Email</th>
           <th>Função</th>
+          <th>Ações</th> 
         </tr>
       </thead>
       <tbody>
@@ -14,6 +15,10 @@
           <td>{{user.nome}}</td>
           <td>{{user.email}}</td>
           <td>{{user.funcao}}</td>
+          <td>
+            <button (click)="editarUser(user)" class="btn btn-primary">✏️</button> 
+            <button (click)="removerUser(user)" class="btn btn-danger">❌</button> 
+          </td>
         </tr>
       </tbody>
     </table>

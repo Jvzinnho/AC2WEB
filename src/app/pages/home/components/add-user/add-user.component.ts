@@ -10,6 +10,7 @@ import { UserService } from '../../../../user.service';
 })
 export class AddUserComponent {
   userForm = this.fb.group({
+
     nome: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
     funcao: ['', Validators.required],
@@ -17,6 +18,7 @@ export class AddUserComponent {
   });
 
   constructor(private fb: FormBuilder, private router: Router, private userService: UserService) {}
+ 
 
   onSubmit(): void {
     if (this.userForm.valid) {
