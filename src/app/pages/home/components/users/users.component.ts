@@ -19,7 +19,7 @@ export class UsersComponent {
 
   editarUser(user: any){
     this.router.navigate(['/app/edit-user', user.id]);
-    // console.log(print(user))
+    
   }
   
   removerUser(user: any){

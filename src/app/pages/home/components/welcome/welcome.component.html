@@ -1,8 +1,26 @@
 <div class="container-fluid">
-  <div class="row  align-items-center text-center full-height">
-    <div class="col">
-      <h1>Welcome to your aplication</h1>
-      <h2>You are logged in</h2>
+  <div class="row align-items-left text-left">
+    <div class="col content">
+      <table class="table table-dark table-hover table-item text-center">
+        <thead>
+          <tr>
+            <th>User ID</th>
+            <th>Funcao</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="2">Total de usuários: {{ users.length }}</td>
+          </tr>
+          <tr *ngFor="let function of function">
+            <td colspan="2">{{ function.name }}: {{ function.count }}</td>
+          </tr>
+          <tr *ngFor="let user of users">
+            <td>{{ user.id }}</td>
+            <td>{{ user.function }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
