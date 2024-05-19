@@ -8,7 +8,7 @@ import { UserService } from '../../../../user.service';
 })
 export class WelcomeComponent implements OnInit {
   users: any[] = [];
-  function: any[] = [];
+  functions: any[] = [];
 
   constructor(private userService: UserService) { }
 
@@ -16,10 +16,10 @@ export class WelcomeComponent implements OnInit {
     this.userService.users$.subscribe((users) => {
       this.users = users;
     });
-
-    this.userService.functions$.subscribe((functions) => {
-      this.function = functions;
+  
+    this.userService.getFunctionsCount().subscribe((functions) => {
+      this.functions = functions;
     });
   }
+  
 }
-

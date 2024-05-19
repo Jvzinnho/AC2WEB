@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
@@ -54,4 +56,20 @@ export class UserService {
   
     this.users$.next(users);
   }
+
+  getFunctionsCount(): Observable<any[]> {
+    return this.users$.pipe(
+      map((users: any[]) => {
+        let functionsCount: { [key: string]: number } = {};
+        users.forEach(user => {
+          if (!functionsCount[user.funcao]) {
+            functionsCount[user.funcao] = 0;
+          }
+          functionsCount[user.funcao]++;
+        });
+        return Object.keys(functionsCount).map(key => ({ name: key, count: functionsCount[key] }));
+      })
+    );
+  }
+  
 }

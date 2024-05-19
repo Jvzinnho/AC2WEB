@@ -4,20 +4,22 @@
       <table class="table table-dark table-hover table-item text-center">
         <thead>
           <tr>
-            <th>User ID</th>
+            <th>Funcionarios</th>
             <th>Funcao</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td colspan="2">Total de usuários: {{ users.length }}</td>
-          </tr>
-          <tr *ngFor="let function of function">
-            <td colspan="2">{{ function.name }}: {{ function.count }}</td>
+          
+          <tr *ngFor="let func of functions">
+            <td>{{ func.name }}</td>
+            <td>{{ func.count }}</td>
           </tr>
           <tr *ngFor="let user of users">
             <td>{{ user.id }}</td>
             <td>{{ user.function }}</td>
+          </tr>
+          <tr>
+            <td colspan="2">Total de usuários: {{ users.length }}</td>
           </tr>
         </tbody>
       </table>
